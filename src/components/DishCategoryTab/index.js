@@ -1,23 +1,22 @@
 import './index.css'
 
 const DishCategoryTab = props => {
-  const {data, changeCat, displayCat} = props
+  const {menuData, isActiveTab, onChangeTabId} = props
+  const {menuCategory, menuCategoryId} = menuData
+  const activeClass = isActiveTab ? 'active-tab-text' : null
+  const onTabClick = () => {
+    onChangeTabId(menuCategoryId)
+  }
   return (
-    <nav className="menu-categories-nav">
-      {data.length > 0 &&
-        data[0].table_menu_list.map(each => (
-          <button
-            key={each.menu_category_id}
-            type="button"
-            className={`category-button ${
-              displayCat === each.menu_category_id ? 'active' : ''
-            }`}
-            onClick={() => changeCat(each.menu_category_id)}
-          >
-            {each.menu_category}
-          </button>
-        ))}
-    </nav>
+    <li className="menu-item">
+      <button
+        onClick={onTabClick}
+        className={`tab-btn ${activeClass}`}
+        type="button"
+      >
+        <p className="tab-name">{menuCategory}</p>
+      </button>
+    </li>
   )
 }
 
