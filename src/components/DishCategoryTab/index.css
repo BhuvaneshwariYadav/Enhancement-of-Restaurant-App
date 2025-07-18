@@ -1,0 +1,24 @@
+.menu-categories-nav {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.category-button {
+  background-color: transparent;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.category-button:hover {
+  color: #007bff;
+}
+.category-button.active {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  font-weight: bold;
+}
