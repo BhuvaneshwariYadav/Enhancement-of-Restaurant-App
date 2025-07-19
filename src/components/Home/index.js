@@ -32,7 +32,7 @@ class Home extends Component {
   componentDidMount = async () => {
     try {
       const response = await fetch(
-        'https://run.mocky.io/v3/77a7e71b-804a-4fbd-822c-3e365d3482cc',
+        'https://apis2.ccbp.in/restaurant-app/restaurant-menu-list-details',
       )
       const dataResponse = await response.json()
 
